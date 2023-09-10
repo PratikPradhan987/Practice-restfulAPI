@@ -1,5 +1,6 @@
 import express from 'express';
 import { getUserByEmail, createUser } from '../modal/users.modal';
+import { authentication, random } from '../helper';
 
 export const register = async (req: express.Request, res: express.Response) => {
     try {

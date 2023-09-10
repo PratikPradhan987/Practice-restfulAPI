@@ -1,9 +1,10 @@
-import express, { NextFunction, Request, Response } from "express";
+import express, { NextFunction, Request, Response, Router } from "express";
 import http from 'http';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
+import router from "../router";
 
 export function createServer() {
     const app = express();
@@ -18,7 +19,7 @@ export function createServer() {
         res.send("This is the First Page");
     })
 
-    // app.use()
+    app.use('/', router())
     const server = http.createServer(app);
     return server;
 }
