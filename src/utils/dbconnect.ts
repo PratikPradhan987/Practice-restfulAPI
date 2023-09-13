@@ -13,3 +13,12 @@ export function dbconnect() {
                 process.exit(1);
         })    
 }
+
+// export async function dbconnect() {
+//         try {
+//                 await mongoose.connect(MONGO_URL);
+//         } catch (error) {
+//                 console.error("not connected");
+//                  process.exit(1);
+//         }
+// }
